@@ -149,9 +149,9 @@ type CoordinatedUTCInquiry struct {
 	Spare2        uint8  `aisWidth:"2" aisEncodeAs:"0"`
 }
 
-// AddessedSafetyMessage could be variable in length, based on the amount of safety related text.
+// AddressedSafetyMessage could be variable in length, based on the amount of safety related text.
 // The length should vary between 1 and 5 slots.
-type AddessedSafetyMessage struct {
+type AddressedSafetyMessage  struct {
 	Header         `aisWidth:"38"`
 	Valid          bool   `aisEncodeMaxLen:"1008"`
 	SequenceNumber uint8  `aisWidth:"2"`
@@ -602,7 +602,7 @@ func init() {
 	msgMap[9].rType = reflect.TypeOf(StandardSearchAndRescueAircraftReport{})
 	msgMap[10].rType = reflect.TypeOf(CoordinatedUTCInquiry{})
 	msgMap[11].rType = reflect.TypeOf(BaseStationReport{})
-	msgMap[12].rType = reflect.TypeOf(AddessedSafetyMessage{})
+	msgMap[12].rType = reflect.TypeOf(AddressedSafetyMessage{})
 	msgMap[13].rType = reflect.TypeOf(BinaryAcknowledge{})
 	msgMap[14].rType = reflect.TypeOf(SafetyBroadcastMessage{})
 	msgMap[15].rType = reflect.TypeOf(Interrogation{})
